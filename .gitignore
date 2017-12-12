@@ -1,0 +1,7 @@
+npm-debug.log
+show-sort-animation.html
+**/index.css.map
+**/.sass-cache
+/sass-test
+/node_modules
+/dist

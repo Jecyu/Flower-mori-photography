@@ -1,0 +1,49 @@
+@mixin font-dpr($font-size) {
+    font-size: $font-size;
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
+$browser-default-font-size: 16px !default;
+html {
+    font-size: $browser-default-font-size;
+}
+
+@function pxTorem($px) {
+    @return $px / $browser-default-font-size * 1rem;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+    background: #fff;
+
+    img {
+        width: 100%;
+    }
+}
+
+.swiper-pagination {
+    width: 100%;
+    left: 50%;
+    bottom: 2%;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+        margin: 0 pxTorem(5px);
+    }
+}
+
