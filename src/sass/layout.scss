@@ -12,11 +12,46 @@
 
 $browser-default-font-size: 16px !default;
 
+$item1: #0a728f;
+$item2: #a52931;
+$item3: 4f5555;
+$item4: #bdd0ce;
+$item5: rgb(239, 239, 244);
+
 html {
     font-size: $browser-default-font-size;
 }
 
 @function pxTorem($px) {
     @return $px / $browser-default-font-size * 1rem;
+}
+
+html,
+body,
+div,
+p,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+// footer
+.bar-tab .tab-item.active {
+    color: $item2;
 }
 

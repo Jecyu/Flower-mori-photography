@@ -1,9 +1,21 @@
-$(function() {
-    'use strict';
-    $(document).on('pageInit', function() {
-    
-        
-   });
 
+'user strict'
+
+var page = {
+    init: function() {
+        this.onload();
+        this.bindEvent();
+    },
+    onload: function() {
+
+    },
+    bindEvent: function() {
+        
+    }
+}
+
+
+$(document).ready(function() {
+    page.init();
     $.init();
 });

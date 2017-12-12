@@ -1,4 +1,9 @@
-
+/**
+ * @Author: jecyu
+ * @Date: 2017-12-12 6:21:32 pm 
+ * @Modified By: jeCyu 
+ * @Last Modified time: 2017-12-12 6:30:23 pm 
+ */
 @mixin font-dpr($font-size) {
     font-size: $font-size;
     [data-dpr="2"] & {
@@ -29,18 +34,31 @@ html,
 body {
     position: relative;
     height: 100%;
-    font-size:20px;
+    font-size: 20px;
 }
 
 // page content
 .page {
     header {
         .title {
-            color: #fff;
+            color: $item5;
             background: $basecolor;
         }
     }
-} 
+}
+
+// header tabs
+.buttons-tab {
+    background: $basecolor;
+    
+    .tab-link {
+        color: $item5;
+        &.active {
+            color: $item2;
+            border-color: $item2;
+        }
+    }
+}
 
 .content-block {
     margin: 0;
@@ -55,9 +73,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
     text-align: center;
-
     img {
         width: 100%;
     }
@@ -68,7 +84,6 @@ body {
     left: 50%;
     bottom: 2%;
     transform: translateX(-50%);
-
     .swiper-pagination-bullet {
         margin: 0 pxTorem(5px);
     }
@@ -85,25 +100,20 @@ body {
     .item-media {
         height: pxTorem(120px);
         width: pxTorem(160px);
-
         img {
             width: 100%;
         }
     }
-
 }
 
 .item-inner {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
-
     .title-footer {
         margin-top: pxTorem(50px);
         display: flex;
         justify-content: space-between;
-
         .item-type {
             width: pxTorem(40px);
             height: pxTorem(20px);
@@ -112,10 +122,7 @@ body {
             color: #fff;
             background: rgb(118, 238, 118);
         }
-    }
-
-    // clear the 1px bottom border
-
+    } // clear the 1px bottom border
     &::after {
         height: 0;
     }
@@ -128,14 +135,12 @@ body {
 }
 
 // card three colums
-
 .card.three-colums {
-    border-bottom: pxTorem(5px) solid $item5;    
+    border-bottom: pxTorem(5px) solid $item5;
     .card-title {
         position: relative;
         height: pxTorem(30px);
         padding-left: pxTorem(10px);
-
         font-weight: normal;
         font-size: pxTorem(14px);
         line-height: pxTorem(30px);
@@ -145,10 +150,8 @@ body {
 .card-media-list {
     display: flex;
     justify-content: space-between;
-
     & .item-media {
         width: 33%;
-
         img {
             width: 100%;
         }
@@ -163,11 +166,3 @@ body {
         width: pxTorem(100px);
     }
 }
-
-
-    
-
-
-
-
-
