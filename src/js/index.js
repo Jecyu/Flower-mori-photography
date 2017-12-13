@@ -8,6 +8,15 @@ var page = {
     },
     onload: function() {
 
+        // banner 
+        var config = {
+            autoplay: 1000,
+            speed: 1000,
+            
+            loop: true,
+        
+        };
+        $(".swiper-container").swiper(config);
     },
     bindEvent: function() {
         
