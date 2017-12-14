@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2017-12-13 4:14:42 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2017-12-13 6:46:52 pm 
+ * @Last Modified time: 2017-12-14 4:48:31 pm 
  */
 
 'user strict'
@@ -15,7 +15,7 @@ var page = {
     onload: function () {
 
         // banner 
-        var config = {
+        this.swiperConfig = {
             
             autoplay: {
                 delay: 5000
@@ -44,25 +44,28 @@ var page = {
 
     },
     bindEvent: function () {
+        var _this = this;
         // 同一个页面不同tab下swiper的处理
         // 当切换tab时，更新swiper
         for (var i = 1; i < 7; i++) {
             $('#tab' + i).on('show', function () {
                 $(this).find('.swiper-container')[0].swiper.update();
+                // TODO 处理update之后配置归零
             });
         }
+        
 
         
-        // TODO 点击搜索
-        $('#search').on('click', function() {
-            console.log('test');
-        });
+        // 点击搜索
+        // $(document).on('Touchstart', '#search', function(e) {
+        //     console.log('test');
+        // });
     }
 }
 
 
 $(document).ready(function () {
-    $(document).on('pageInit', '#information',function() {
+    $(document).on('pageInit', function() {
         page.init();
     });
     $.init();

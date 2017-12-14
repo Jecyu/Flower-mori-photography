@@ -76,3 +76,21 @@ li {
     color: $item2;
 }
 
+
+// search page
+.history-block {
+    padding: pxTorem(10px);
+    font-size: pxTorem(10px);
+
+    .clear-history {
+        margin-top: pxTorem(10px);
+        text-align: center;
+        color: $item2;
+    }
+}
+
+.history-list {
+    .history-item {
+        border-bottom: pxTorem(1px) solid darken($item5, 10%);
+    }
+}

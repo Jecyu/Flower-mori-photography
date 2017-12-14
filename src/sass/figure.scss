@@ -1,9 +1,16 @@
 /**
  * @Author: jecyu
+ * @Date: 2017-12-14 6:00:55 pm 
+ * @Modified By: jeCyu 
+ * @Last Modified time: 2017-12-14 6:11:16 pm 
+ */
+/**
+ * @Author: jecyu
  * @Date: 2017-12-12 6:21:32 pm 
  * @Modified By: jeCyu 
  * @Last Modified time: 2017-12-14 5:22:47 pm 
  */
+
 @mixin font-dpr($font-size) {
     font-size: $font-size;
     [data-dpr="2"] & {
@@ -29,14 +36,12 @@ $item2: #a52931;
 $item3: 4f5555;
 $item4: #bdd0ce;
 $item5: rgb(239, 239, 244);
-
 html,
 body {
     position: relative;
     height: 100%;
     font-size: 20px;
 }
-
 
 // Head navigation
 .page {
@@ -52,33 +57,27 @@ body {
 .page {
     .buttons-tab {
         height: 100%;
-        background: $basecolor;
-        // touch-action: none;
-
+        background: $basecolor; // touch-action: none;
         .tab-link {
             color: $item4;
             &.active {
-                color: $item2;                
+                color: $item2;
                 border-color: $item2;
             }
         }
     }
 }
 
-
-
 // footer
-.bar-nav, 
+.bar-nav,
 .bar-tab {
     background: $basecolor;
     color: $item2;
-    
     .tab-item {
         &.active {
             color: $item2;
         }
     }
-
     .button-link {
         color: $item4;
         top: 0;
@@ -90,16 +89,15 @@ body {
     padding: 0;
 }
 
-
 // card 
 // left right layout
 .card {
-    margin: 0;
+    margin: 0 0 pxTorem(5px) 0;
 }
 
 .media-list {
     .item-content {
-        border-bottom: pxTorem(5px) solid $item5;        
+        border-bottom: pxTorem(5px) solid $item5;
         .item-media {
             margin: 0;
             padding: 0;
@@ -111,10 +109,10 @@ body {
 
 .item-media {
     img {
-        height: 100%;   
+        height: 100%;
         width: 100%;
     }
- }
+}
 
 // item-information
 .item-inner {
@@ -122,7 +120,6 @@ body {
         display: flex;
         justify-content: space-between;
         margin-top: pxTorem(30px);
-        
         .item-type {
             width: pxTorem(40px);
             height: pxTorem(20px);
@@ -131,7 +128,7 @@ body {
             color: #fff;
             background: rgb(118, 238, 118);
         }
-    } 
+    }
 }
 
 .list-block {
