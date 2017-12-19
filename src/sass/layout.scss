@@ -1,0 +1,96 @@
+@mixin font-dpr($font-size) {
+    font-size: $font-size;
+
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
+$browser-default-font-size: 16px !default;
+
+$item1: #0a728f;
+$item2: #a52931;
+$item3: 4f5555;
+$item4: #bdd0ce;
+$item5: rgb(239, 239, 244);
+
+html {
+    font-size: $browser-default-font-size;
+}
+
+@function pxTorem($px) {
+    @return $px / $browser-default-font-size * 1rem;
+}
+
+html,
+body,
+div,
+p,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+// header swiper
+.swiper-container {
+    height: pxTorem(200px);
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    img {
+        // height: 100%;
+        width: 100%;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    opacity: .8;
+    background: $item2;
+}
+
+// footer
+.bar-tab .tab-item.active {
+    color: $item2;
+}
+
+
+// search page
+.history-block {
+    padding: pxTorem(10px);
+    font-size: pxTorem(10px);
+
+    .clear-history {
+        margin-top: pxTorem(10px);
+        text-align: center;
+        color: $item2;
+    }
+}
+
+.history-list {
+    .history-item {
+        border-bottom: pxTorem(1px) solid darken($item5, 10%);
+    }
+}

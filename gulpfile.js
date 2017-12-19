@@ -2,7 +2,7 @@
  * @Author: Jecyu
  * @Date: 2017-11-03 8:34:18 am 
  * @Modified By: JeCyu 
- * @Last Modified time: 2017-11-07 10:24:28 am 
+ * @Last Modified time: 2017-12-12 2:49:58 pm 
  */
 /*!
  * gulp
@@ -133,7 +133,9 @@ gulp.task('watch', function () {
     browserSync.init({
         server: {
             baseDir: 'dist' // 在 dist 目录下启动本地服务器环境，自动启动默认浏览器
-        }
+        },
+        browser: 'chrome'
+
     });
 
     // 监控 SASS 文件，有变动则执行CSS注入

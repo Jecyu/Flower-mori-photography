@@ -1,4 +1,9 @@
-
+/**
+ * @Author: jecyu
+ * @Date: 2017-12-12 6:21:32 pm 
+ * @Modified By: jeCyu 
+ * @Last Modified time: 2017-12-14 5:22:47 pm 
+ */
 @mixin font-dpr($font-size) {
     font-size: $font-size;
     [data-dpr="2"] & {
@@ -29,48 +34,62 @@ html,
 body {
     position: relative;
     height: 100%;
-    font-size:20px;
+    font-size: 20px;
 }
 
-// header-nav and footer-nav
-.bar {
-    background: $basecolor;
-}
 
-.bar.bar-header-secondary {
-    background: $item5;
-}
-
-// page content
+// Head navigation
 .page {
-    header {
-        .title {
-            color: #fff;
-            background: $basecolor;
+    .bar-nav {
+        padding: 0;
+    }
+}
+
+.bar .button {
+    top: pxTorem(3px);
+}
+
+.page {
+    .buttons-tab {
+        height: 100%;
+        background: $basecolor;
+        // touch-action: none;
+
+        .tab-link {
+            color: $item4;
+            &.active {
+                color: $item2;                
+                border-color: $item2;
+            }
         }
     }
-} 
+}
+
+
+
+// footer
+.bar-nav, 
+.bar-tab {
+    background: $basecolor;
+    color: $item2;
+    
+    .tab-item {
+        &.active {
+            color: $item2;
+        }
+    }
+
+    .button-link {
+        color: $item4;
+        top: 0;
+    }
+}
 
 .content-block {
     margin: 0;
     padding: 0;
 }
 
-.swiper-container {
-    height: pxTorem(200px);
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    text-align: center;
-
-    img {
-        width: 100%;
-    }
-}
 
 // card 
 // left right layout
@@ -78,30 +97,32 @@ body {
     margin: 0;
 }
 
-.item-content {
-    border-bottom: pxTorem(5px) solid $item5;
-    .item-media {
-        height: pxTorem(120px);
-        width: pxTorem(160px);
-
-        img {
-            width: 100%;
+.media-list {
+    .item-content {
+        border-bottom: pxTorem(5px) solid $item5;        
+        .item-media {
+            margin: 0;
+            padding: 0;
+            height: pxTorem(80px);
+            width: pxTorem(120px);
         }
     }
-
 }
 
-.item-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
+.item-media {
+    img {
+        height: 100%;   
+        width: 100%;
+    }
+ }
 
+// item-information
+.item-inner {
     .title-footer {
-        margin-top: pxTorem(50px);
         display: flex;
         justify-content: space-between;
-
+        margin-top: pxTorem(30px);
+        
         .item-type {
             width: pxTorem(40px);
             height: pxTorem(20px);
@@ -110,11 +131,11 @@ body {
             color: #fff;
             background: rgb(118, 238, 118);
         }
-    }
+    } 
+}
 
-    // clear the 1px bottom border
-
-    &::after {
+.list-block {
+    .item-inner:after {
         height: 0;
     }
 }
@@ -126,14 +147,12 @@ body {
 }
 
 // card three colums
-
 .card.three-colums {
-    border-bottom: pxTorem(5px) solid $item5;    
+    border-bottom: pxTorem(5px) solid $item5;
     .card-title {
         position: relative;
         height: pxTorem(30px);
         padding-left: pxTorem(10px);
-
         font-weight: normal;
         font-size: pxTorem(14px);
         line-height: pxTorem(30px);
@@ -143,10 +162,8 @@ body {
 .card-media-list {
     display: flex;
     justify-content: space-between;
-
     & .item-media {
         width: 33%;
-
         img {
             width: 100%;
         }
@@ -161,11 +178,3 @@ body {
         width: pxTorem(100px);
     }
 }
-
-
-    
-
-
-
-
-
